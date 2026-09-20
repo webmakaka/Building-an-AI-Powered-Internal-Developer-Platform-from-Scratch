@@ -56,7 +56,7 @@ Minimal by design. You need a laptop, a terminal, and the tools below.
 
 - 8 GB RAM minimum (16 GB recommended)
 - 20 GB free disk space
-- macOS, Linux, or Windows (with WSL2)
+- Linux
 
 ---
 
@@ -115,7 +115,7 @@ The course standardizes on one tool per job to keep setup simple and eliminate "
 ### Python Packages
 
 ```bash
-pip3 install pulumi pulumi-kubernetes scikit-learn pyyaml requests flask --break-system-packages
+$ pip install pulumi pulumi-kubernetes scikit-learn pyyaml requests flask --break-system-packages
 ```
 
 ### Optional: run the setup in an isolated devcontainer
