@@ -67,6 +67,6 @@ You can't improve what you don't measure. The maturity assessment and KPI baseli
 
 ## Go Deeper
 
-This session covers Chapters 1-3 of [*The Platform Engineer's Handbook*](https://peh-packt.platformetrics.com/), which goes further into Platform as Product, Team Topologies, and organizational design patterns. See the [book repo](https://github.com/achankra/peh) for the full code samples.
+This session covers Chapters 1-3 of *The Platform Engineer's Handbook*
 
 
