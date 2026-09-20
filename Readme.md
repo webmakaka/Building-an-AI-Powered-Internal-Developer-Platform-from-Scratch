@@ -250,50 +250,50 @@ Code/
 Session 1 is mostly conceptual — you just need Python 3. From Session 2 onward, everything runs on Kind:
 
 ```bash
-kind create cluster --name workshop
-kubectl cluster-info --context kind-workshop
+$ kind create cluster --name workshop
+$ kubectl cluster-info --context kind-workshop
 ```
 
 ### Step 2: Install Platform Services (Session 2)
 
 ```bash
-cd Session2/demo
+$ cd Session2/demo
 
 # Create isolated team namespaces with resource quotas, network policies, and service accounts
-python3 namespace-provisioner.py --namespace team-alpha --env dev --team alpha
-python3 namespace-provisioner.py --namespace team-beta --env dev --team beta
+$ python namespace-provisioner.py --namespace team-alpha --env dev --team alpha
+$ python namespace-provisioner.py --namespace team-beta --env dev --team beta
 
 # Apply platform admin RBAC: ClusterRoles, ServiceAccounts, and bindings
-kubectl apply -f rbac-platform-admin.yaml
+$ kubectl apply -f rbac-platform-admin.yaml
 ```
 
 ### Step 3: Add Crossplane and Policies (Session 3)
 
 ```bash
-cd Session3/demo
+$ cd Session3/demo
 
 # Install Crossplane providers, define the developer-facing API (XRD), and map it to resources (Composition)
-kubectl apply -f crossplane-providers.yaml
-kubectl apply -f xrd-postgresql.yaml
-kubectl apply -f composition-postgresql.yaml
+$ kubectl apply -f crossplane-providers.yaml
+$ kubectl apply -f xrd-postgresql.yaml
+$ kubectl apply -f composition-postgresql.yaml
 
 # Run policy checks against intentionally bad manifests — shift-left validation in action
-conftest test conftest-tests/test-manifests.yaml -p conftest-tests/
+$ conftest test conftest-tests/test-manifests.yaml -p conftest-tests/
 ```
 
 ### Step 4: Verify Everything Works (Session 4)
 
 ```bash
-cd Session4/demo
+$ cd Session4/demo
 
 # Validate cluster health: nodes Ready, system pods running, team namespaces exist, quotas applied
-python3 test-cluster-health.py
+$ python test-cluster-health.py
 
 # Verify infrastructure: namespace isolation, RBAC roles and bindings, Crossplane readiness
-python3 test-infrastructure.py
+$ python test-infrastructure.py
 
 # Run policy checks: conftest catches missing labels, privileged containers, untrusted registries
-python3 test-policies.py
+$ python test-policies.py
 ```
 
 If all three pass, your Day 1 foundation is solid. If any fail, the output tells you exactly which Session 2 or 3 step was missed.
@@ -301,70 +301,70 @@ If all three pass, your Day 1 foundation is solid. If any fail, the output tells
 ### Step 5: Developer Experience and Self-Service (Session 5)
 
 ```bash
-cd Session5/demo
+$ cd Session5/demo
 
 # Scaffold a complete service: repo structure, Dockerfile, CI/CD, k8s manifests, catalog entry
-python3 project-bootstrapper.py bootstrap platform demo-api python
+$ python project-bootstrapper.py bootstrap platform demo-api python
 
 # AI-powered doc search: index platform docs and answer queries locally with TF-IDF
-python3 rag-platform-docs.py
+$ python rag-platform-docs.py
 ```
 
 ### Step 6: Observability Stack (Session 6)
 
 ```bash
-cd Session6/demo
+$ cd Session6/demo
 
 # Deploy the OTel Collector as the single entry point for all telemetry
-kubectl apply -f otel-collector-deployment.yaml
+$ kubectl apply -f otel-collector-deployment.yaml
 
 # AI alert correlation: group noisy alerts into root-cause incidents
-python3 alert-correlator.py
+$ python alert-correlator.py
 ```
 
 ### Step 7: Chaos and Resilience (Session 7)
 
 ```bash
-cd Session7/demo
+$ cd Session7/demo
 
 # Inject 100ms network latency into api-service pods via Chaos Mesh
-kubectl apply -f chaos-network-delay.yaml
+$ kubectl apply -f chaos-network-delay.yaml
 
 # Orchestrate the chaos experiment with safety controls and recovery monitoring
-python3 chaos-runner.py
+$ python chaos-runner.py
 
 # Convert a markdown runbook into executable steps with safety gates
-python3 runbook-automator.py
+$ python runbook-automator.py
 ```
 
 ### Step 8: AI Platform Capabilities (Session 8)
 
 ```bash
-cd Session8/demo
+$ cd Session8/demo
 
 # RAG doc search: answer natural language queries against platform docs (no API key)
-python3 rag-platform-docs.py
+$ python rag-platform-docs.py
 
 # Multi-agent incident response: Triage → Diagnosis → Remediation with human-in-the-loop
-python3 incident-agent.py
+$ python incident-agent.py
 
 # AI agent observability: Prometheus metrics for latency, confidence, override rates
-python3 ai-agent-observability.py
+$ python ai-agent-observability.py
 ```
 
 ### Step 9: Team Topologies, Measure and Plan (Session 9)
 
 ```bash
-cd Session9/demo
+$ cd Session9/demo
 
 # Map your org into Team Topologies types and visualize interaction modes
-python3 team-topology-generator.py
+$ python team-topology-generator.py
 
 # Collect DORA metrics: deployment frequency, lead time, MTTR, change failure rate
-python3 platform-kpi-collector.py
+$ python platform-kpi-collector.py
 
 # Quantify AI impact in business terms: hours saved, incidents resolved faster
-python3 measure-ai-impact.py
+$ python measure-ai-impact.py
 ```
 
 ---
@@ -375,52 +375,52 @@ If you prefer to install tools incrementally as needed:
 
 ### Session 1 — No extra tools needed
 ```bash
-python3 --version   # Confirm Python 3.10+
+$ python3 --version   # Confirm Python 3.10+
 ```
 
 ### Session 2 — Kubernetes + Pulumi
 ```bash
-kind create cluster --name workshop
-pip3 install pulumi pulumi-kubernetes --break-system-packages
+$ kind create cluster --name workshop
+$ pip install pulumi pulumi-kubernetes --break-system-packages
 ```
 
 ### Session 3 — Crossplane + Conftest
 ```bash
-helm repo add crossplane-stable https://charts.crossplane.io/stable
-helm install crossplane crossplane-stable/crossplane --namespace crossplane-system --create-namespace
+$ helm repo add crossplane-stable https://charts.crossplane.io/stable
+$ helm install crossplane crossplane-stable/crossplane --namespace crossplane-system --create-namespace
 # conftest should already be installed from prerequisites
 ```
 
 ### Session 4 — No extra tools (verification only)
 ```bash
-python3 Session4/demo/test-cluster-health.py
-python3 Session4/demo/test-infrastructure.py
-python3 Session4/demo/test-policies.py
+$ python Session4/demo/test-cluster-health.py
+$ python Session4/demo/test-infrastructure.py
+$ python Session4/demo/test-policies.py
 ```
 
 ### Session 5 — Backstage + scikit-learn
 ```bash
-pip3 install scikit-learn --break-system-packages
+$ pip install scikit-learn --break-system-packages
 # Backstage (optional local setup): npx @backstage/create-app@latest
 ```
 
 ### Session 6 — OTel + Prometheus + Sloth
 ```bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
-pip3 install pyyaml requests --break-system-packages
+$ helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+$ helm install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
+$ pip install pyyaml requests --break-system-packages
 ```
 
 ### Session 7 — Chaos Mesh + Velero
 ```bash
-helm repo add chaos-mesh https://charts.chaos-mesh.org
-helm install chaos-mesh chaos-mesh/chaos-mesh --namespace chaos-mesh --create-namespace
+$ helm repo add chaos-mesh https://charts.chaos-mesh.org
+$ helm install chaos-mesh chaos-mesh/chaos-mesh --namespace chaos-mesh --create-namespace
 # Velero: https://velero.io/docs/main/basic-install/
 ```
 
 ### Session 8 — AI Dependencies (Optional Claude API)
 ```bash
-pip3 install scikit-learn pyyaml --break-system-packages
+$ pip install scikit-learn pyyaml --break-system-packages
 # Optional (for LLM features): export ANTHROPIC_API_KEY=your-key-here
 ```
 
