@@ -77,6 +77,4 @@ Developers submit 10 lines of YAML, the platform provisions the database. Confte
 
 ## Go Deeper
 
-This session covers Chapters 6-7 of [*The Platform Engineer's Handbook*](https://peh-packt.platformetrics.com/), which goes further into advanced Crossplane patterns, full GitOps pipelines with ArgoCD, and progressive delivery with Argo Rollouts. See the [book repo](https://github.com/achankra/peh) for the full code samples.
-
-[Back to Course Overview](../README.md)
+This session covers Chapters 6-7 of *The Platform Engineer's Handbook*
