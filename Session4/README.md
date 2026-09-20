@@ -39,16 +39,16 @@ python3 verify_module.py
 ## Quick Start
 
 ```bash
-cd demo
+$ cd demo
 
 # Validate cluster health: nodes Ready, system pods running, namespaces, quotas, Pulumi/Crossplane config
-python3 test-cluster-health.py
+$ python test-cluster-health.py
 
 # Verify infrastructure: namespace isolation, RBAC roles, Crossplane readiness
-python3 test-infrastructure.py
+$ python test-infrastructure.py
 
 # Run offline policy checks: compliant vs. non-compliant manifests, conftest integration
-python3 test-policies.py
+$ python test-policies.py
 ```
 
 ## Key Takeaway
@@ -57,6 +57,4 @@ If any test fails, you know exactly which layer has a problem. In production, th
 
 ## Go Deeper
 
-Day 1 covers the foundational layers from Chapters 1-7 of [*The Platform Engineer's Handbook*](https://peh-packt.platformetrics.com/). The book expands on each layer with production-grade patterns, multi-cluster strategies, and advanced GitOps workflows. See the [book repo](https://github.com/achankra/peh) for the full code samples.
-
-[Back to Course Overview](../README.md)
+Day 1 covers the foundational layers from Chapters 1-7 of *The Platform Engineer's Handbook*
