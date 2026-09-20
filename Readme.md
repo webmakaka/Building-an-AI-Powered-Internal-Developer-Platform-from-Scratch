@@ -10,9 +10,8 @@ https://github.com/achankra/peh-course
 
 <br/>
 
-A hands-on, 2-day workshop by [Ajay Chankramath](mailto:ajay@platformetrics.com), author of *The Platform Engineer's Handbook* (Packt, 2026).
+A hands-on, 2-day workshop by [Ajay Chankramath], author of *The Platform Engineer's Handbook* (Packt, 2026).
 
-**Register:** [Eventbrite - Building an AI-Powered Internal Developer Platform from Scratch](https://www.eventbrite.co.uk/e/building-an-ai-powered-internal-developer-platform-from-scratch-tickets-1978960034736)
 
 ### Companion Resources
 
@@ -46,6 +45,18 @@ No cloud accounts required. No vendor lock-in. Everything runs locally on Kubern
 ### Who Should Attend
 
 Platform Engineers, DevOps Engineers, SREs, Infrastructure Engineers, Engineering Managers, AI/ML Engineers building internal tooling, and anyone responsible for developer productivity.
+
+---
+
+## Prerequisites
+
+Minimal by design. You need a laptop, a terminal, and the tools below.
+
+### Hardware
+
+- 8 GB RAM minimum (16 GB recommended)
+- 20 GB free disk space
+- macOS, Linux, or Windows (with WSL2)
 
 ---
 
@@ -84,17 +95,6 @@ The course standardizes on one tool per job to keep setup simple and eliminate "
 > **Looking for ArgoCD, Argo Rollouts, OpenCost, or other tools?** The book covers a broader set of tools across 14 chapters. See the [book repo](https://github.com/achankra/peh) for the full stack. This course focuses on the subset you can build and run in two days.
 
 ---
-
-## Prerequisites
-
-Minimal by design. You need a laptop, a terminal, and the tools below.
-
-### Hardware
-
-- 8 GB RAM minimum (16 GB recommended)
-- 20 GB free disk space
-- macOS, Linux, or Windows (with WSL2)
-
 
 ### Software — Install Before Day 1
 
