@@ -42,23 +42,23 @@ python3 verify_module.py
 
 ```bash
 # Demo — score your org across self-service, observability, security, and DevEx
-cd demo
-python3 platform-maturity-assessment.py
+$ cd demo
+$ python platform-maturity-assessment.py
 
 # Take-home exercises
-cd takehome
+$ cd takehome
 
 # Evaluate against the 12 platform design principles (API-first, guardrails, etc.)
-python3 design-principles-checklist.py ../demo/platform-config.yaml
+$ python design-principles-checklist.py ../demo/platform-config.yaml
 
 # Interactive CLI survey — collects developer feedback, produces a DevEx score (0-100)
-python3 devex-survey.py
+$ python devex-survey.py
 
 # Map the onboarding workflow step by step and rank friction points by time impact
-python3 friction-analyzer.py --workflow onboarding
+$ python friction-analyzer.py --workflow onboarding
 
 # Collect DORA metrics (deployment frequency, lead time, MTTR, change failure rate) as your baseline
-python3 platform-kpi-collector.py
+$ python platform-kpi-collector.py
 ```
 
 ## Key Takeaway
@@ -69,4 +69,4 @@ You can't improve what you don't measure. The maturity assessment and KPI baseli
 
 This session covers Chapters 1-3 of [*The Platform Engineer's Handbook*](https://peh-packt.platformetrics.com/), which goes further into Platform as Product, Team Topologies, and organizational design patterns. See the [book repo](https://github.com/achankra/peh) for the full code samples.
 
-[Back to Course Overview](../README.md)
+
