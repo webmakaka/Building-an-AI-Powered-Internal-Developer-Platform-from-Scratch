@@ -1,4 +1,14 @@
-# Building an AI-Powered Internal Developer Platform from Scratch
+# [Workshop][Ajay Chankramath] Building an AI-Powered Internal Developer Platform from Scratch [ENG, 2026]
+
+<img src="./img/Building-an-AI-powered-Internal-Developer-Platform-from-Scratch-Cover.webp" alt="Building an AI-Powered Internal Developer Platform from Scratch" height="256px" align="right">
+
+<br/>
+
+**Original repo:**  
+https://github.com/achankra/peh-course
+
+
+<br/>
 
 A hands-on, 2-day workshop by [Ajay Chankramath](mailto:ajay@platformetrics.com), author of *The Platform Engineer's Handbook* (Packt, 2026).
 
@@ -418,20 +428,3 @@ pip3 install scikit-learn pyyaml --break-system-packages
 ```bash
 # Uses tools already installed. Just run the scripts.
 ```
-
----
-
-## About the Author
-
-**Ajay Chankramath** is the author of *The Platform Engineer's Handbook* (Packt, 2026) and founder of Platformetrics. He has built internal developer platforms at scale and writes about platform engineering, DevOps, and developer experience.
-
-- Email: [ajay@platformetrics.com](mailto:ajay@platformetrics.com)
-- Book: [The Platform Engineer's Handbook](https://www.packtpub.com/en-us/product/the-platform-engineers-handbook-9781805128885)
-- Companion Site: [peh-packt.platformetrics.com](https://peh-packt.platformetrics.com/)
-- Book Code: [github.com/achankra/peh](https://github.com/achankra/peh)
-
----
-
-## License
-
-This workshop material is provided as part of the Packt course. See individual session READMEs for detailed instructions on each exercise.
