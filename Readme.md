@@ -50,8 +50,6 @@ Platform Engineers, DevOps Engineers, SREs, Infrastructure Engineers, Engineerin
 
 ## Prerequisites
 
-Minimal by design. You need a laptop, a terminal, and the tools below.
-
 ### Hardware
 
 - 8 GB RAM minimum (16 GB recommended)
@@ -100,23 +98,28 @@ The course standardizes on one tool per job to keep setup simple and eliminate "
 
 | Tool | Version | Install |
 |---|---|---|
-| **Docker Desktop** (or alternative above) | Latest | [docker.com/get-started](https://www.docker.com/get-started/) |
-| **Kind** | v0.20+ | `brew install kind` or [kind.sigs.k8s.io](https://kind.sigs.k8s.io/docs/user/quick-start/#installation) |
-| **kubectl** | v1.28+ | `brew install kubectl` or [kubernetes.io/docs/tasks/tools](https://kubernetes.io/docs/tasks/tools/) |
-| **Helm** | v3.12+ | `brew install helm` or [helm.sh/docs/intro/install](https://helm.sh/docs/intro/install/) |
-| **Python 3** | 3.10+ | `brew install python3` or [python.org](https://www.python.org/downloads/) |
-| **pip3** | Latest | Comes with Python 3 |
-| **Node.js** | v18+ | `brew install node` (for Backstage) |
-| **Git** | Latest | `brew install git` |
-| **Pulumi** | Latest | `brew install pulumi` or [pulumi.com/docs/install](https://www.pulumi.com/docs/install/) |
-| **conftest** | Latest | `brew install conftest` or [conftest.dev](https://www.conftest.dev/install/) |
-| **pre-commit** | Latest | `pip3 install pre-commit --break-system-packages` or [pre-commit.com](https://pre-commit.com/#install) |
+| **Docker Desktop** (or alternative above) | Latest |
+| **Kind** | v0.20+ 
+| **kubectl** | v1.28+ |
+| **Helm** | v3.12+ |
+| **Python 3** | 3.10+ |
+| **pip3** | Latest |
+| **Node.js** | v18+ |
+| **Git** | Latest |
+| **Pulumi** | Latest |
+| **conftest** | Latest |
+| **pre-commit** | Latest |
+
+
+<br/>
 
 ### Python Packages
 
 ```bash
 $ pip install pulumi pulumi-kubernetes scikit-learn pyyaml requests flask --break-system-packages
 ```
+
+<br/>
 
 ### Optional: run the setup in an isolated devcontainer
 This is optional and can be used, but does not have to. For example `vscode` supports it via extension. See the docs [here](https://code.visualstudio.com/docs/devcontainers/containers) for more details and how to start it.
@@ -145,20 +148,6 @@ pwd
 /workspaces/peh-course/Session2/demo
 # then execute the runner script, which should terminate succesfully
 ../../runners/run-session2-demo.sh 
-```
-
-### Quick Validation
-
-Run this after installation to confirm everything works (also in devcontainer):
-
-```bash
-docker --version
-kind --version
-kubectl version --client
-helm version --short
-python3 --version
-pulumi version
-conftest --version
 ```
 
 ---
