@@ -116,7 +116,7 @@ The course standardizes on one tool per job to keep setup simple and eliminate "
 ### Python Packages
 
 ```bash
-$ pip install pulumi pulumi-kubernetes scikit-learn pyyaml requests flask --break-system-packages
+$ pip install pulumi pulumi-kubernetes scikit-learn pyyaml requests flask matplotlib numpy --break-system-packages
 ```
 
 <br/>
