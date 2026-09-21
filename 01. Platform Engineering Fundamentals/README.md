@@ -25,11 +25,36 @@ This session answers the "why" before diving into the "how." You'll assess your 
 
 - Python 3.10+
 
+<br/>
+
 ## Verify Your Setup
 
 ```bash
-python3 verify_module.py
+$ python verify_module.py 
+============================================================
+Session 1 — Module Verification
+============================================================
+
+--- Python ---
+  [PASS] Python 3.10+ — Found 3.10.12
+
+--- Demo Files ---
+  [PASS] platform-maturity-assessment.py
+  [PASS] platform-config.yaml
+
+--- Takehome Files ---
+  [PASS] design-principles-checklist.py
+  [PASS] devex-survey.py
+  [PASS] friction-analyzer.py
+  [PASS] platform-kpi-collector.py
+
+============================================================
+Results: 7/7 checks passed
+Session 1 is ready to go!
+============================================================
 ```
+
+<br/>
 
 ## Contents
 
@@ -44,7 +69,17 @@ python3 verify_module.py
 # Demo — score your org across self-service, observability, security, and DevEx
 $ cd demo
 $ python platform-maturity-assessment.py
+```
 
+<br/>
+
+```shell
+$ cat assessment_results.json
+```
+
+<br/>
+
+```shell
 # Take-home exercises
 $ cd takehome
 
@@ -60,6 +95,8 @@ $ python friction-analyzer.py --workflow onboarding
 # Collect DORA metrics (deployment frequency, lead time, MTTR, change failure rate) as your baseline
 $ python platform-kpi-collector.py
 ```
+
+<br/>
 
 ## Key Takeaway
 
