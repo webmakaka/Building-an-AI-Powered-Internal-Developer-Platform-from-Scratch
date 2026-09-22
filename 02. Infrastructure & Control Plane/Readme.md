@@ -71,6 +71,13 @@ $ kubectl apply -f demo-app-deployment.yaml
 $ python test-cluster-health.py
 ```
 
+<br/>
+
+```shell
+// Delete kind cluster
+$ kind delete cluster --name workshop
+```
+
 ## Key Takeaway
 
 One command creates a namespace + quota + limit range + RBAC. Developers never touch cluster-level resources. This is the foundation every subsequent session builds on.
