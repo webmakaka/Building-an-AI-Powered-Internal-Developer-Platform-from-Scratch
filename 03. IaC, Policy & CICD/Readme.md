@@ -27,11 +27,51 @@ Self-service infrastructure meets shift-left security. You'll set up Crossplane 
 
 - kubectl, Helm (for Crossplane), conftest, pre-commit, Python 3
 
+<br/>
+
 ## Verify Your Setup
 
 ```bash
 $ python verify_module.py
+============================================================
+Session 3 — Module Verification
+============================================================
+
+--- Python ---
+  [PASS] Python 3.10+ — Found 3.10.12
+
+--- CLI Tools ---
+  [PASS] kubectl — Client Version: v1.30.0
+  [PASS] Helm — version.BuildInfo{Version:"v3.19.4", GitCommit:"7cfb6e486dac
+  [PASS] conftest — Conftest: 0.70.1
+  [PASS] pre-commit — pre-commit 4.6.2
+
+--- Cluster Components ---
+  [PASS] Crossplane namespace — Installed
+
+--- Python Packages ---
+  [PASS] flask
+
+--- Demo Files ---
+  [PASS] xrd-postgresql.yaml
+  [PASS] composition-postgresql.yaml
+  [PASS] demo-app-database.yaml
+  [PASS] backstage-ai-template.yaml
+  [PASS] crossplane-providers.yaml
+
+--- Takehome Files ---
+  [PASS] backend-pipeline.yml
+  [PASS] guardrail-validator.py
+  [PASS] test-infrastructure.py
+  [PASS] .pre-commit-config.yaml
+
+============================================================
+Results: 16/16 checks passed
+Session 3 is ready to go!
+============================================================
 ```
+
+<br/>
 
 ## Contents
 
@@ -43,13 +83,13 @@ $ python verify_module.py
 ## Quick Start
 
 ```bash
-# Demo
+// Demo
 $ cd demo
 
-# Install Crossplane providers that connect XRDs to actual cloud resources
+// Install Crossplane providers that connect XRDs to actual cloud resources
 $ kubectl apply -f crossplane-providers.yaml
 
-# Define the developer-facing API: what parameters they can set when requesting a database
+// Define the developer-facing API: what parameters they can set when requesting a database
 $ kubectl apply -f xrd-postgresql.yaml
 
 # Map the developer's simple claim to the actual underlying resources
@@ -70,6 +110,8 @@ $ python guardrail-validator.py
 # Test the full infrastructure provisioning workflow: apply claim, verify readiness, check secrets
 $ python test-infrastructure.py
 ```
+
+<br/>
 
 ## Key Takeaway
 
