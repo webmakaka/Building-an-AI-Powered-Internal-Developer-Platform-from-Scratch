@@ -134,22 +134,24 @@ $ kubectl apply -f crossplane-providers.yaml
 // Define the developer-facing API: what parameters they can set when requesting a database
 $ kubectl apply -f xrd-postgresql.yaml
 
-# Map the developer's simple claim to the actual underlying resources
+// Map the developer's simple claim to the actual underlying resources
 $ kubectl apply -f composition-postgresql.yaml
 
-# Submit a 10-line database claim — this is the developer experience
+$ kubectl create ns team-alpha
+
+// Submit a 10-line database claim — this is the developer experience
 $ kubectl apply -f demo-app-database.yaml
 
-# Run policy checks against intentionally bad manifests (missing labels, privileged containers, etc.)
+// Run policy checks against intentionally bad manifests (missing labels, privileged containers, etc.)
 $ conftest test conftest-tests/test-manifests.yaml -p conftest-tests/
 
-# Take-home exercises
+// Take-home exercises
 $ cd takehome
 
-# Validate infrastructure claims against org policies (prod-tier only in prod namespaces, etc.)
+// Validate infrastructure claims against org policies (prod-tier only in prod namespaces, etc.)
 $ python guardrail-validator.py
 
-# Test the full infrastructure provisioning workflow: apply claim, verify readiness, check secrets
+// Test the full infrastructure provisioning workflow: apply claim, verify readiness, check secrets
 $ python test-infrastructure.py
 ```
 
