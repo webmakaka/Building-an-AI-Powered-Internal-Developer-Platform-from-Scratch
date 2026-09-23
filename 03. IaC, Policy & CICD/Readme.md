@@ -73,12 +73,42 @@ Session 3 is ready to go!
 
 <br/>
 
+**A long way around for Russians**
+
 ```shell
 $ {
     docker pull xpkg.upbound.io/crossplane-contrib/function-patch-and-transform:v0.7.0
     docker pull xpkg.upbound.io/crossplane-contrib/provider-helm:v0.18.1
     docker pull xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.13.0
 }
+```
+
+<br/>
+
+```shell
+$ docker save xpkg.upbound.io/crossplane-contrib/function-patch-and-transform:v0.7.0 | ssh marley@192.168.56.1 "docker load"
+$ docker save xpkg.upbound.io/crossplane-contrib/provider-helm:v0.18.1 | ssh marley@192.168.56.1 "docker load"
+$ docker save xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.13.0 | ssh marley@192.168.56.1 "docker load"
+```
+
+<br/>
+
+```shell
+$ kind --name platform-dev load docker-image xpkg.upbound.io/crossplane-contrib/function-patch-and-transform:v0.7.0
+$ kind --name platform-dev load docker-image xpkg.upbound.io/crossplane-contrib/provider-helm:v0.18.1
+$ kind --name platform-dev load docker-image xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.13.0
+```
+
+<br/>
+
+```shell
+$ kubectl get pods -n crossplane-system
+NAME                                                        READY   STATUS    RESTARTS   AGE
+crossplane-85f759598f-j6kxp                                 1/1     Running   0          54m
+crossplane-rbac-manager-55ffc79d6-tbf44                     1/1     Running   0          54m
+function-patch-and-transform-6a1ab24d2512-98dd94d87-c8vsb   1/1     Running   0          50m
+provider-helm-4d90a08b9ede-65fd68fbc4-8m7mf                 1/1     Running   0          110s
+provider-kubernetes-a3cbbe355fa7-6b5f4cffc8-pqsvk           1/1     Running   0          17m
 ```
 
 <br/>
