@@ -141,10 +141,40 @@ $ kubectl create ns team-alpha
 
 // Submit a 10-line database claim — this is the developer experience
 $ kubectl apply -f demo-app-database.yaml
+```
 
+<br/>
+
+```shell
 // Run policy checks against intentionally bad manifests (missing labels, privileged containers, etc.)
 $ conftest test conftest-tests/test-manifests.yaml -p conftest-tests/
+WARN - conftest-tests/test-manifests.yaml - main - Pod spec missing containers
+WARN - conftest-tests/test-manifests.yaml - main - Pod spec missing containers
+WARN - conftest-tests/test-manifests.yaml - main - Container 'debug' uses ':latest' tag (use specific versions)
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'cost-center' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'owner' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'team' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'cost-center' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'owner' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'team' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'cost-center' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'owner' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'team' label
+FAIL - conftest-tests/test-manifests.yaml - main - Container 'debug' cannot run as root (UID 0)
+FAIL - conftest-tests/test-manifests.yaml - main - Container 'debug' cannot run in privileged mode
+FAIL - conftest-tests/test-manifests.yaml - main - Container 'debug' image not from allowed registry: registry.company.com/tools/debug:latest
+FAIL - conftest-tests/test-manifests.yaml - main - Container 'debug' missing CPU requests
+FAIL - conftest-tests/test-manifests.yaml - main - Container 'debug' missing memory requests
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'cost-center' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'owner' label
+FAIL - conftest-tests/test-manifests.yaml - main - Deployment missing 'team' label
 
+56 tests, 36 passed, 3 warnings, 17 failures, 0 exceptions
+```
+
+<br/>
+
+```shell
 // Take-home exercises
 $ cd takehome
 
