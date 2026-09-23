@@ -70,6 +70,4 @@ One command creates everything a developer needs to ship. AI doc search means ne
 
 ## Go Deeper
 
-This session covers Chapters 8-9 of [*The Platform Engineer's Handbook*](https://peh-packt.platformetrics.com/), which goes further into Backstage plugin development, advanced golden paths, and measuring developer experience at scale. See the [book repo](https://github.com/achankra/peh) for the full code samples.
-
-[Back to Course Overview](../README.md)
+This session covers Chapters 8-9 of *The Platform Engineer's Handbook*
