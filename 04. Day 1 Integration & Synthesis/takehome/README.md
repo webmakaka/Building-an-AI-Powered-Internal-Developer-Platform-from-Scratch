@@ -4,9 +4,10 @@
 
 ### 1. Verify Your Cluster (5 min)
 Make sure everything from Day 1 is still running:
+
 ```bash
-kubectl get ns
-kubectl get pods --all-namespaces
+$ kubectl get ns
+$ kubectl get pods --all-namespaces
 ```
 
 ### 2. Review Your Notes
