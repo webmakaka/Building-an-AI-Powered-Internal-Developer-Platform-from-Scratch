@@ -90,20 +90,20 @@ test_system_pods_running (__main__.TestClusterHealth)
 Critical kube-system pods should be running. ... ok
 test_team_namespaces_exist (__main__.TestClusterHealth)
 Team namespaces from Session 2 should exist. ... FAIL
-test_composition_exists (__main__.TestCrossplaneConfig) ... FAIL
+test_composition_exists (__main__.TestCrossplaneConfig) ... ok
 test_crossplane_namespace_exists (__main__.TestCrossplaneConfig)
 Crossplane system namespace should exist if Crossplane was installed. ... ok
-test_xrd_exists (__main__.TestCrossplaneConfig) ... FAIL
-test_main_py_exists (__main__.TestPulumiConfig) ... FAIL
-test_pulumi_yaml_exists (__main__.TestPulumiConfig) ... FAIL
-test_requirements_exists (__main__.TestPulumiConfig) ... FAIL
+test_xrd_exists (__main__.TestCrossplaneConfig) ... ok
+test_main_py_exists (__main__.TestPulumiConfig) ... ok
+test_pulumi_yaml_exists (__main__.TestPulumiConfig) ... ok
+test_requirements_exists (__main__.TestPulumiConfig) ... ok
 
 ======================================================================
 FAIL: test_resource_quotas_applied (__main__.TestClusterHealth)
 Resource quotas should be set on team namespaces.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-cluster-health.py", line 77, in test_resource_quotas_applied
+  File "/home/marley/tmp/peh-course/Session4/demo/test-cluster-health.py", line 77, in test_resource_quotas_applied
     self.assertTrue(len(items) > 0, "No resource quota found in team-alpha")
 AssertionError: False is not true : No resource quota found in team-alpha
 
@@ -112,54 +112,14 @@ FAIL: test_team_namespaces_exist (__main__.TestClusterHealth)
 Team namespaces from Session 2 should exist.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-cluster-health.py", line 61, in test_team_namespaces_exist
+  File "/home/marley/tmp/peh-course/Session4/demo/test-cluster-health.py", line 61, in test_team_namespaces_exist
     self.assertIn("team-beta", ns_names, "team-beta namespace not found (run Session 2 first)")
 AssertionError: 'team-beta' not found in ['crossplane-system', 'default', 'kube-node-lease', 'kube-public', 'kube-system', 'local-path-storage', 'team-alpha'] : team-beta namespace not found (run Session 2 first)
 
-======================================================================
-FAIL: test_composition_exists (__main__.TestCrossplaneConfig)
 ----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-cluster-health.py", line 116, in test_composition_exists
-    self.assertTrue(os.path.exists(path),
-AssertionError: False is not true : Session3/demo/composition-postgresql.yaml not found
+Ran 11 tests in 0.379s
 
-======================================================================
-FAIL: test_xrd_exists (__main__.TestCrossplaneConfig)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-cluster-health.py", line 111, in test_xrd_exists
-    self.assertTrue(os.path.exists(path),
-AssertionError: False is not true : Session3/demo/xrd-postgresql.yaml not found
-
-======================================================================
-FAIL: test_main_py_exists (__main__.TestPulumiConfig)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-cluster-health.py", line 89, in test_main_py_exists
-    self.assertTrue(os.path.exists(path),
-AssertionError: False is not true : Session2/demo/pulumi-cluster/__main__.py not found
-
-======================================================================
-FAIL: test_pulumi_yaml_exists (__main__.TestPulumiConfig)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-cluster-health.py", line 94, in test_pulumi_yaml_exists
-    self.assertTrue(os.path.exists(path),
-AssertionError: False is not true : Session2/demo/pulumi-cluster/Pulumi.yaml not found
-
-======================================================================
-FAIL: test_requirements_exists (__main__.TestPulumiConfig)
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-cluster-health.py", line 99, in test_requirements_exists
-    self.assertTrue(os.path.exists(path),
-AssertionError: False is not true : Session2/demo/pulumi-cluster/requirements.txt not found
-
-----------------------------------------------------------------------
-Ran 11 tests in 0.382s
-
-FAILED (failures=7, skipped=1)
+FAILED (failures=2, skipped=1)
 ```
 
 <br/>
@@ -171,7 +131,7 @@ $ python test-infrastructure.py
 Session 4: Infrastructure Verification Tests
 ============================================================
 test_claim_file_valid_yaml (__main__.TestCrossplaneReadiness)
-The Crossplane claim from Session 3 should be valid YAML. ... FAIL
+The Crossplane claim from Session 3 should be valid YAML. ... ok
 test_crossplane_pods_running (__main__.TestCrossplaneReadiness)
 Crossplane pods should be running. ... ok
 test_network_policies_exist (__main__.TestNamespaceIsolation)
@@ -188,20 +148,11 @@ test_service_accounts_exist (__main__.TestRBACConfiguration)
 Platform service accounts should exist in platform-engineering namespace. ... FAIL
 
 ======================================================================
-FAIL: test_claim_file_valid_yaml (__main__.TestCrossplaneReadiness)
-The Crossplane claim from Session 3 should be valid YAML.
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-infrastructure.py", line 132, in test_claim_file_valid_yaml
-    self.assertTrue(os.path.exists(claim_path),
-AssertionError: False is not true : Session3/demo/demo-app-database.yaml not found
-
-======================================================================
 FAIL: test_network_policies_exist (__main__.TestNamespaceIsolation)
 Team namespaces should have network policies.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-infrastructure.py", line 68, in test_network_policies_exist
+  File "/home/marley/tmp/peh-course/Session4/demo/test-infrastructure.py", line 68, in test_network_policies_exist
     self.assertTrue(len(data.get("items", [])) > 0,
 AssertionError: False is not true : No network policy in team-alpha
 
@@ -210,7 +161,7 @@ FAIL: test_team_alpha_has_quota (__main__.TestNamespaceIsolation)
 team-alpha should have a resource quota.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-infrastructure.py", line 46, in test_team_alpha_has_quota
+  File "/home/marley/tmp/peh-course/Session4/demo/test-infrastructure.py", line 46, in test_team_alpha_has_quota
     self.assertTrue(len(data.get("items", [])) > 0,
 AssertionError: False is not true : No resource quota in team-alpha
 
@@ -219,7 +170,7 @@ FAIL: test_team_beta_has_quota (__main__.TestNamespaceIsolation)
 team-beta should have a resource quota.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-infrastructure.py", line 57, in test_team_beta_has_quota
+  File "/home/marley/tmp/peh-course/Session4/demo/test-infrastructure.py", line 57, in test_team_beta_has_quota
     self.assertTrue(len(data.get("items", [])) > 0,
 AssertionError: False is not true : No resource quota in team-beta
 
@@ -228,14 +179,14 @@ FAIL: test_service_accounts_exist (__main__.TestRBACConfiguration)
 Platform service accounts should exist in platform-engineering namespace.
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/home/marley/tmp/Building-an-AI-Powered-Internal-Developer-Platform-from-Scratch/04. Day 1 Integration & Synthesis/demo/test-infrastructure.py", line 102, in test_service_accounts_exist
+  File "/home/marley/tmp/peh-course/Session4/demo/test-infrastructure.py", line 102, in test_service_accounts_exist
     self.assertIn("platform-admin-sa", sa_names,
 AssertionError: 'platform-admin-sa' not found in [] : platform-admin-sa not found in platform-engineering namespace
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.417s
+Ran 8 tests in 0.414s
 
-FAILED (failures=5, skipped=2)
+FAILED (failures=4, skipped=2)
 ```
 
 <br/>
