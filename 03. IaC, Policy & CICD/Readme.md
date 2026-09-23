@@ -30,7 +30,7 @@ Self-service infrastructure meets shift-left security. You'll set up Crossplane 
 ## Verify Your Setup
 
 ```bash
-python3 verify_module.py
+$ python verify_module.py
 ```
 
 ## Contents
@@ -44,31 +44,31 @@ python3 verify_module.py
 
 ```bash
 # Demo
-cd demo
+$ cd demo
 
 # Install Crossplane providers that connect XRDs to actual cloud resources
-kubectl apply -f crossplane-providers.yaml
+$ kubectl apply -f crossplane-providers.yaml
 
 # Define the developer-facing API: what parameters they can set when requesting a database
-kubectl apply -f xrd-postgresql.yaml
+$ kubectl apply -f xrd-postgresql.yaml
 
 # Map the developer's simple claim to the actual underlying resources
-kubectl apply -f composition-postgresql.yaml
+$ kubectl apply -f composition-postgresql.yaml
 
 # Submit a 10-line database claim — this is the developer experience
-kubectl apply -f demo-app-database.yaml
+$ kubectl apply -f demo-app-database.yaml
 
 # Run policy checks against intentionally bad manifests (missing labels, privileged containers, etc.)
-conftest test conftest-tests/test-manifests.yaml -p conftest-tests/
+$ conftest test conftest-tests/test-manifests.yaml -p conftest-tests/
 
 # Take-home exercises
-cd takehome
+$ cd takehome
 
 # Validate infrastructure claims against org policies (prod-tier only in prod namespaces, etc.)
-python3 guardrail-validator.py
+$ python guardrail-validator.py
 
 # Test the full infrastructure provisioning workflow: apply claim, verify readiness, check secrets
-python3 test-infrastructure.py
+$ python test-infrastructure.py
 ```
 
 ## Key Takeaway
