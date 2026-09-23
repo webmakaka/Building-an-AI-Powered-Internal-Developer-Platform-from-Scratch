@@ -80,6 +80,8 @@ Session 3 is ready to go!
 | [demo/](demo/) | Crossplane XRD + Composition, database claim, conftest policies, AI Backstage template |
 | [takehome/](takehome/) | GitHub Actions pipelines, Rego policy authoring, pre-commit hooks, guardrail validator |
 
+<br/>
+
 ## Quick Start
 
 ```bash
