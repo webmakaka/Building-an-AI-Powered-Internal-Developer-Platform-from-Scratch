@@ -73,6 +73,16 @@ Session 3 is ready to go!
 
 <br/>
 
+```shell
+$ {
+    docker pull xpkg.upbound.io/crossplane-contrib/function-patch-and-transform:v0.7.0
+    docker pull xpkg.upbound.io/crossplane-contrib/provider-helm:v0.18.1
+    docker pull xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.13.0
+}
+```
+
+<br/>
+
 ## Contents
 
 | Folder | What's Inside |
