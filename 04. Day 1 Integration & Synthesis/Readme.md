@@ -68,16 +68,14 @@ Session 4 is ready to go!
 
 <br/>
 
-```bash
+```shell
 $ cd demo
 ```
 
 <br/>
 
-```
+```shell
 // Validate cluster health: nodes Ready, system pods running, namespaces, quotas, Pulumi/Crossplane config
-$ python test-cluster-health.py
-
 $ python test-cluster-health.py
 ============================================================
 Session 4: Cluster Health Tests
