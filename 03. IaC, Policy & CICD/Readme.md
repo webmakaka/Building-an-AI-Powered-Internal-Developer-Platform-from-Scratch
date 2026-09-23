@@ -99,17 +99,6 @@ $ kind --name platform-dev load docker-image xpkg.upbound.io/crossplane-contrib/
 $ kind --name platform-dev load docker-image xpkg.upbound.io/crossplane-contrib/provider-kubernetes:v0.13.0
 ```
 
-<br/>
-
-```shell
-$ kubectl get pods -n crossplane-system
-NAME                                                        READY   STATUS    RESTARTS   AGE
-crossplane-85f759598f-j6kxp                                 1/1     Running   0          54m
-crossplane-rbac-manager-55ffc79d6-tbf44                     1/1     Running   0          54m
-function-patch-and-transform-6a1ab24d2512-98dd94d87-c8vsb   1/1     Running   0          50m
-provider-helm-4d90a08b9ede-65fd68fbc4-8m7mf                 1/1     Running   0          110s
-provider-kubernetes-a3cbbe355fa7-6b5f4cffc8-pqsvk           1/1     Running   0          17m
-```
 
 <br/>
 
@@ -130,7 +119,23 @@ $ cd demo
 
 // Install Crossplane providers that connect XRDs to actual cloud resources
 $ kubectl apply -f crossplane-providers.yaml
+```
 
+<br/>
+
+```shell
+$ kubectl get pods -n crossplane-system
+NAME                                                        READY   STATUS    RESTARTS   AGE
+crossplane-85f759598f-j6kxp                                 1/1     Running   0          54m
+crossplane-rbac-manager-55ffc79d6-tbf44                     1/1     Running   0          54m
+function-patch-and-transform-6a1ab24d2512-98dd94d87-c8vsb   1/1     Running   0          50m
+provider-helm-4d90a08b9ede-65fd68fbc4-8m7mf                 1/1     Running   0          110s
+provider-kubernetes-a3cbbe355fa7-6b5f4cffc8-pqsvk           1/1     Running   0          17m
+```
+
+<br/>
+
+```shell
 // Define the developer-facing API: what parameters they can set when requesting a database
 $ kubectl apply -f xrd-postgresql.yaml
 
