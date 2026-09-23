@@ -29,7 +29,7 @@ Day 2 opens with the developer's perspective. You'll scaffold a complete service
 ## Verify Your Setup
 
 ```bash
-python3 verify_module.py
+$ python verify_module.py
 ```
 
 ## Contents
@@ -42,8 +42,8 @@ python3 verify_module.py
 ## Quick Start
 
 ```bash
-# Demo
-cd demo
+// Demo
+$ cd demo
 
 # Scaffold a complete service: repo structure, Dockerfile, CI/CD, k8s manifests, catalog entry
 python3 project-bootstrapper.py bootstrap platform demo-api python
